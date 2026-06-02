@@ -10,6 +10,7 @@ SCRIM_CHANNEL_ID = 1511222831332069386
 COMPETITION_CHANNEL_ID = 1511222974164893776
 CHAT_KR_CHANNEL_ID = 1493161282524938372
 CHAT_JP_CHANNEL_ID = 1493395325753364641
+SESH_BOT_ID = 616754792965865495
 
 @client.event
 async def on_ready():
@@ -17,7 +18,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if message.author.bot:
+    if message.author.bot and message.author.id != SESH_BOT_ID:
         return
 
     if message.channel.id == SCRIM_CHANNEL_ID:
